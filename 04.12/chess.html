@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .col {
+            background-color: rgb(172, 13, 13);
+        }
+
+        table {
+            border: 5px solid rgb(172, 13, 13);
+            height: 400px;
+            width: 400px;
+            margin-left: 400px;
+            margin-top: 200px;
+        }
+
+
+        .tablcol tr:last-child td,
+        .tablcol tr:first-child td {
+            height:  20px;
+            border: 0px;
+            text-align: center;
+        }
+
+        .tablcol td:first-child,
+        .tablcol td:last-child {
+            width: 20px;
+            border: 0px;
+            text-align: center;
+        }
+        table {
+            border: 5px solid rgb(172, 13, 13);
+            border-collapse: collapse;
+        }
+
+        .tablcol td {
+            background-color: white;
+            border: 1px solid rgb(172, 13, 13);
+        }
+
+
+        .tablcol tr:not(:last-child):nth-child(even) td:not(:first-child):nth-child(odd),
+        .tablcol tr:not(:first-child):nth-child(odd) td:not(:last-child):nth-child(even) {
+            background-color:rgb(172, 13, 13);
+        }
+        p{
+            color:rgb(172, 13, 13) ;
+            margin-top: auto;
+            margin-bottom: auto;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <table class="tablcol">
+        <tr>
+            <td class="col"></td>
+            <td><p> <b>A</b> </p></td>
+            <td class="col"><p><b>B</b></p></td>
+            <td><p><b>C</b></p></td>
+            <td class="col"><p><b>D</b></p></td>
+            <td><p><b>E</b></p></td>
+            <td class="col"><p><b>F</b></p></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><p><b>6</b></p></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"><p><b>6</b></p></td>
+        </tr>
+        <tr>
+            <td class="col"><p><b>5</b></p></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td><p><b>5</b></p></td>
+        </tr>
+        <tr>
+            <td><p><b>4</b></p></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"><p><b>4</b></p></td>
+        </tr>
+        <tr>
+            <td class="col"><p><b>3</b></p></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td><p><b>3</b></p></td>
+        </tr>
+        <tr>
+            <td><p><b>2</b></p></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"><p><b>2</b></p></td>
+        </tr>
+        <tr>
+            <td class="col"><p><b>1</b></p></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td></td>
+            <td class="col"></td>
+            <td><p><b>1</b></p></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="col"><p><b>A</b></p></td>
+            <td><p><b>B</b></p></td>
+            <td class="col"> <p><b>C</b></p> </td>
+            <td><p><b>D</b></p></td>
+            <td class="col"> <p><b>E</b></p> </td>
+            <td> <p><b>F</b></p> </td>
+            <td class="col"></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
