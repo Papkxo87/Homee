@@ -10,33 +10,36 @@
 <body>
     <?php
     //Фибоначчи c for
-    /* $z = 25;
+    $z = 25;
     $a = 1;
     for($i=1; $i<$z; $i+=$a) {
     echo $i, ' ';
     $a = $i - $a;
-    }*/
-
-
-    /*$z = 30;
-    $s = 1;
+    } 
+    echo '<br>';
+    
+    //Фибоначчи c while
+    $z = 25;
+    $a = 0;
     $i = 1;
-    while ($i <= $z) {
-        $s = $i;
-        $S+= $i;
-        echo $s . '  ';
-    }*/
-
-    $x = 0;
-    $y = 1;
-    $i = 0;
-    while ($i < $n) {
-        $z = $x + $y;
-        echo $z . "<br>";
-        $x = $y;
-        $y = $z;
-        $i++;
+    while ($i < $z) {
+        echo $i . ' ';
+        $i+=$a;
+        $a = $i - $a;
     }
+    echo '<br>';
+
+    //Фибоначчи c Do while
+    $z = 25;
+    $a = 0;
+    $i = 1;
+    do {
+        echo $i . ' ';
+        $i+=$a;
+        $a = $i - $a;
+    } while ($i < $z);
+
+    
 
 
     ?>
