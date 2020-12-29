@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    :root {
+        --img: 800px
+    }
+
+    .im img {
+        width: 200px;
+        height: 200px;
+        filter: grayscale(100%);
+    }
+
+    .im img:hover {
+        width: calc(var(--img)/2);
+        height: calc(var(--img)/2);
+        transition: 3s;
+        filter: grayscale(0%);
+    }
+
+    .im {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="im"><img src="palm.jpg" alt=""></div>
+
+
+</body>
+
+</html>

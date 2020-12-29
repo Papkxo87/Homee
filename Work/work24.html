@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    :root {
+        --img: 700px
+    }
+
+    .im img {
+        width: 200px;
+        height: 200px;
+        filter: grayscale(100%);
+    }
+
+    .im img:hover {
+        width: calc(var(--img)/2);
+        height: calc(var(--img)/2);
+        transition: 3s;
+        filter: grayscale(0%);
+        border: 10px groove rgb(9, 32, 238);
+    }
+
+    .im {
+        margin-top: 90px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+</style>
+
+<body>
+    <div class="im">
+        <h1>Photo Gallery</h1>
+        <img src="palm.jpg" alt="">
+        <img src="palm2.jpg" alt="">
+        <img src="palm3.jpg" alt="">
+        <img src="palm4.jpg" alt="">
+        <img src="palm5.jpg" alt="">
+    </div>
+
+
+</body>
+
+</html>
