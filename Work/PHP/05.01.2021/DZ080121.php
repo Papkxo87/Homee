@@ -13,6 +13,7 @@ $namber = [
     9 => "девять"
 ];
 
-$op = $_POST["op1"];
+foreach (str_split($_POST["op1"]) as  $value) {
+    echo  " " . $namber[$value];
+}
 
-echo $namber[$op];
