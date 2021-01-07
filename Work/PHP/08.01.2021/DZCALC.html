@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>простой калькулятор №1</title>
+
+    <Style>
+        form.POST_CALC_1 {
+            display: block;
+            margin: auto;
+            width: 250px;
+            border: 1px solid #cccccc;
+            padding: 28px;
+        }
+
+        form.POST_CALC_1 input[type="number"] {
+            padding: 7px;
+            margin: 4px;
+            width: 220px;
+        }
+
+        form.POST_CALC_1 input[type="submit"] {
+            width: 95%;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        form div {
+            text-align: center;
+        }
+    </Style>
+</head>
+
+<body>
+    <form method="POST" action="#rezult" class="POST_CALC_1 ">
+        <input type="radio" name="operator" value="plus">+<br>
+        <input type="radio" name="operator" value="minus">-<br>
+        <input type="radio" name="operator" value="multi">*<br>
+        <input type="radio" name="operator" value="delit">/<br>
+        <input type="text" name="first" required><br>
+        <input type="text" name="second" required><br>
+        <input type="submit" name="send" value="Отправить">
+    </form>
+</body>
+
+</html>
