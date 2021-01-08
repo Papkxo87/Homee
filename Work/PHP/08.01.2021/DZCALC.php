@@ -1,28 +1,24 @@
 <?php
-if ($_POST['first']) {
-    $first = strip_tags($_POST['first']);
-}
-if ($_POST['second']) {
-    $second = strip_tags($_POST['second']);
-}
-if ($_POST['send']) {
-    if (!$_POST['operator']) {
-        $rezult = 'Нужно выбрать знак';
-    } else {
-        if ($_POST['operator'] == 'plus') {
-            $rezult = 'Результат сложения :<br>' . ($first + $second);
-        }
-        if ($_POST['operator'] == 'minus') {
-            $rezult = 'Результат минусования :<br>' . ($first - $second);
-        }
-        if ($_POST['operator'] == 'multi') {
-            $rezult = 'Результат умножения :<br>' . $first * $second;
-        }
-        if ($_POST['operator'] == 'delit') {
-            $rezult = 'Результат деления:<br>' . $first / $second;
-        }
-    }
+if (empty($_POST['task'])) {      //Проверяем пуста или нет переменная
+    $result = 'Задача не выбрана. Пожалуйста выберите задачу.';
+} elseif (empty($_POST['a'])) {     //Проверяем пуста или нет переменная
+    $result = 'Вы не ввели число в первую форму. Пожалуйста, заполните все поля.';
+} elseif (empty($_POST['b'])) {     //Проверяем пуста или нет переменная
+    $result = 'Вы не ввели число во вторую форму. Пожалуйста, заполните все поля.';
 } else {
-    $rezult = 'Простой калькулятор! ';
+    $a = $_POST['a'];             //Получаем первое слагаемое
+    $b = $_POST['b'];             //Получаем второе слагаемое
+    $task = $_POST['task'];       //Получаем задачу
+
+    if ($task == '+') {           
+        $result = $a + $b;
+    } elseif ($task == '*') {       
+        $result = $a * $b;
+    } elseif ($task == '/') {       
+        $result = $a / $b;
+    } else {                        
+        $result = $a - $b;
+    }
 }
-echo $rezult;
+
+echo 'Результат: ' . $result;
