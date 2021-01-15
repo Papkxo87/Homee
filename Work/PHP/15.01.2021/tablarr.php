@@ -15,9 +15,9 @@ $tabl = array_chunk($vedomost[1], 5); //разбиваем 2 массив по 5
 unset($vedomost[1]); //удаляет элемент
 $a = array_merge($vedomost, $tabl); //сливание 2-х массивов
 echo "<table border=3>";
-for ($i = 0; $i < count($a);/*Подсчитывает количество элементов массива*/ $i++) {
+for ($i = 0; $i < count($a); $i++) {
     echo "<tr>";
-    for ($j = 0; $j < count($a, COUNT_RECURSIVE);/*для подсчёта всех элементов многомерных массивов*/ $j++) {
+    for ($j = 0; $j < count($a, COUNT_RECURSIVE); $j++) {
         if ($j >= 5) continue;
         echo "<td>" . $a[$i][$j] . "</td>";
     }
