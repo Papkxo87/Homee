@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW как состояние души</title>
+    <style type="text/css">
+        body {
+            background-image: url(23-bmw.jpg);
+            background-size: cover;
+        }
+
+        h1 {
+            font-size: 80px;
+            color: rgba(212, 6, 85, 0.918);
+            text-shadow: 1px 0 2px white;
+            margin-top: 0px;
+        }
+
+        ul {
+            padding-left: 70px;
+            color: rgba(212, 6, 85, 0.918);
+            /*text-shadow: 1px 0 2px white;*/
+            position: absolute;
+            top: 20px;
+            left: 1000px;
+        }
+
+        li {
+            display: inline;
+            padding: 3px;
+        }
+
+        a {
+            color: rgba(212, 6, 85, 0.918)
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        img {
+            position: absolute;
+            height: 60px;
+            width: 60px;
+            padding-left: 500px;
+            top: 27px;
+        }
+
+        iframe {
+            height: 160px;
+            width: 260px;
+        }
+
+        iframe:hover {
+            height: 360px;
+            width: 660px;
+
+        }
+        form{
+            font-size: 20px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1><b><i>BMW Lifestyle</i></b></h1>
+        <ul>
+            <li><a href="https://www.bmw.by/ru/topics/offers-and-services/lifestyle.html" target="_blank">BMW</a></li>
+            <li><a href="#" target="_blank">GALLERY</a></li>
+            <li><a href="#" target="_blank">HISTORY</a></li>
+            <li><a href="#" target="_blank">MARKET</a></li>
+        </ul>
+        <img src="bmw.png" alt="">
+        
+    </div>
+    <form action="golosovanie.php" method="get" target='_blank'>
+        <!-- указываем в value цифру нужного нам голосования, для которого уже создали файлы //-->
+        <input type="Hidden" name="id" value="1">
+        <p><b>Как вы относитесь к автомобилю марки BMW:</b></p>
+        <input type="Radio" name="vote" value="1" checked>Отлично<br>
+        <input type="Radio" name="vote" value="2">Хорошо<br>
+        <input type="Radio" name="vote" value="3">Удовлет.<br>
+        <input type="Radio" name="vote" value="4">Плохо<br>
+        <input type="Radio" name="vote" value="5">Очень плохо<br>
+        <input type="Submit" value=" Голосовать" style="margin-top:10px;">
+    </form>
+
+    <!-- указываем цифру нужного нам голосования, для которого уже создали файлы //-->
+    <p><a href='golosovanie.php?id=1' target='_blank'><button>Результаты</button></a></p>
+
+
+</body>
+
+</html>

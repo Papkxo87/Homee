@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        table {
+            margin: 5px 0;
+            text-align: left;
+            border-collapse: separate;
+            border: 1px solid #ddd;
+            border-spacing: 10px;
+            border-radius: 3px;
+            background: #fdfdfd;
+            font-size: 14px;
+            width: auto;
+        }
+
+        td,
+        th {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        th {
+            background: #E4E4E4;
+        }
+
+        caption {
+            font-style: italic;
+            text-align: right;
+            color: #547901;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <caption>Пример таблицы с названием</caption>
+        <tr>
+            <td>Строка1 Ячейка1</td>
+            <td>Строка1 Ячейка2</td>
+            <td>Строка1 Ячейка3</td>
+            <td>Строка1 Ячейка4</td>
+        </tr>
+        <tr>
+            <td>Строка2 Ячейка1</td>
+            <td>Строка2 Ячейка2</td>
+            <td>Строка2 Ячейка3</td>
+            <td>Строка2 Ячейка4</td>
+        </tr>
+        <tr>
+            <td>Строка3 Ячейка1</td>
+            <td>Строка3 Ячейка2</td>
+            <td>Строка3 Ячейка3</td>
+            <td>Строка3 Ячейка4</td>
+        </tr>
+        <tr>
+            <td>Строка4 Ячейка1</td>
+            <td>Строка4 Ячейка2</td>
+            <td>Строка4 Ячейка3</td>
+            <td>Строка4 Ячейка4</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <caption>Таблица с тегом th</caption>
+        <tr>
+            <th>Столбец 1</th>
+            <th>Столбец 2</th>
+            <th>Столбец 3</th>
+            <th>Столбец 4</th>
+        </tr>
+        <tr>
+            <td>Строка2 Ячейка1</td>
+            <td>Строка2 Ячейка2</td>
+            <td>Строка2 Ячейка3</td>
+            <td>Строка2 Ячейка4</td>
+        </tr>
+        <tr>
+            <td>Строка3 Ячейка1</td>
+            <td>Строка3 Ячейка2</td>
+            <td>Строка3 Ячейка3</td>
+            <td>Строка3 Ячейка4</td>
+        </tr>
+        <tr>
+            <td>Строка4 Ячейка1</td>
+            <td>Строка4 Ячейка2</td>
+            <td>Строка4 Ячейка3</td>
+            <td>Строка4 Ячейка4</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <caption>Объединение ячеек таблицы</caption>
+        <tr>
+            <th>Столбец 1</th>
+            <th>Столбец 2</th>
+            <th>Столбец 3</th>
+            <th>Столбец 4</th>
+        </tr>
+        <tr>
+            <td colspan="3">Строка2 Ячейка1 (соединена с ячейками 2 и 3)</td>
+            <td rowspan="3">Строка2 Ячейка4 (соединена с ячейкой 4 в строках 3 и 4)</td>
+        </tr>
+        <tr>
+            <td>Строка3 Ячейка1</td>
+            <td>Строка3 Ячейка2</td>
+            <td>Строка3 Ячейка3</td>
+        </tr>
+        <tr>
+            <td>Строка4 Ячейка1</td>
+            <td>Строка4 Ячейка2</td>
+            <td>Строка4 Ячейка3</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
