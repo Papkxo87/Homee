@@ -1,0 +1,15 @@
+Alex
+Alex@mail.ru
+Hello, Max.
+<----->
+Jani
+Jani@mail.ru
+Hello, Soni
+<----->
+Olga
+Olga@mail.ru
+Hello, Moris
+<----->
+Leonid
+Leonid@mail.ru
+Hello, Andry

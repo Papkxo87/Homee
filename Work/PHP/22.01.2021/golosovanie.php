@@ -48,17 +48,6 @@
             top: 27px;
         }
 
-        iframe {
-            height: 160px;
-            width: 260px;
-        }
-
-        iframe:hover {
-            height: 360px;
-            width: 660px;
-
-        }
-
         form {
             font-size: 20px;
 
@@ -80,13 +69,13 @@
 
         $id =  $_GET['id'];
         $vote = $_GET['vote'];
-        $ip = $_SERVER['REMOTE_ADDR']; //помещается IP-адрес клиента(127.0.0.1.)
+        $ip = $_SERVER['REMOTE_ADDR']; //IP-адрес клиента(127.0.0.1.)
         $ip_file = file_get_contents("ip$id.dat");
         $ip_abbr = explode(",", $ip_file);
         $data = file("$id.dat");
         echo "<table border=0 style='text-align:left' ><th colspan=3 style='text-align:center'><b>$data[0]</b></th>";
         for ($i = 1; $i < count($data); $i++) {
-            $votes = explode("~", $data[$i]); // значение~ответ
+            $votes = explode("~", $data[$i]);
             $graf = 100 * $votes[0] / (count($ip_abbr) - 1);
             echo "<tr><td>$votes[1]</td><td style='text-align: center'><b>$votes[0]</b></td><td> <span style='font-size: small'>" . round($graf, 3) . "%</span><div style='background: red; height:5px; width:" . round($graf, 0) . "px'></div></td></tr>";
         }
