@@ -1,15 +1,19 @@
 Alex
 Alex@mail.ru
-Hello, Max.
+Hello, Max. Where were you?
 <----->
 Jani
 Jani@mail.ru
-Hello, Soni
+Hello, Soni. So good to see you
 <----->
 Olga
 Olga@mail.ru
-Hello, Moris
+Hello, Moris. I'm going to the store
 <----->
 Leonid
 Leonid@mail.ru
-Hello, Andry
+Hello, Andry! I watch movies
+<----->
+Goward
+Goward@mail.ru
+Hello, Olga! I live in Canada 

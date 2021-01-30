@@ -9,7 +9,6 @@
 
 <body>
     <?php
-    // print_r($_POST);
     include "dzconfig.php";
     $data = file($fileName);
     if (isset($_POST['answer'])) {
@@ -28,7 +27,6 @@
     foreach ($data as $value) {
         $answers[] = explode($separate, $value);
     }
-    // print_r($answers);
     ?>
 
 <form action="?" method="POST">

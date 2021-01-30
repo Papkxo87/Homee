@@ -1,6 +1,6 @@
 <?php
 
-include "add.php";
+include "guestadd.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,14 +25,14 @@ include "add.php";
 <body>
     <b>CUMULATIVE BASE &#128190</b>
     <?php
-    include "tabl.php";
+    include "guesttable.php";
     ?>
     <br>
     <b>Enter the required information &#9997</b>
     <form action="?" method="POST">
         <b>NAME &#8658</b><input type="text" name="name"><br>
         <b>EMAIL &#8658</b><input type="text" name="email"><br>
-        <b>TEXT &#8658</b><input type="text" name="text">
+        <b>TEXT &#8658</b><textarea name="text" id="" cols="30" rows="10"></textarea>
         <input type="submit" value="ok">
     </form>
 </body>
