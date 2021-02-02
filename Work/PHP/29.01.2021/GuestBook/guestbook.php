@@ -19,6 +19,16 @@ include "guestadd.php";
         body:hover {
             color: sandybrown;
         }
+
+        input[type="submit"] {
+            width: 100px;
+            margin-left: 150px;
+            background-color: red;
+        }
+
+        input[type="submit"]:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -32,7 +42,7 @@ include "guestadd.php";
     <form action="?" method="POST">
         <b>NAME &#8658</b><input type="text" name="name"><br>
         <b>EMAIL &#8658</b><input type="text" name="email"><br>
-        <b>TEXT &#8658</b><textarea name="text" id="" cols="30" rows="10"></textarea>
+        <b>TEXT &#8658</b><textarea name="text" id="" cols="30" rows="10"></textarea><br>
         <input type="submit" value="ok">
     </form>
 </body>
