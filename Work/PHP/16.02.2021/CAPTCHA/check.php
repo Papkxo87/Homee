@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+    body{
+        background-color: rebeccapurple;
+        font-size: 40px;
+        color: white;
+    }
+    </style>
 </head>
 <body>
 <?php
-//print_r($_POST);
 $number = $_POST["number"];
-$userNumber = $_POST["userNumber"];
+$user = $_POST["user"];
 $arr = ["ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"];
-//echo $number[1];
-if (preg_match("/.*(" . $arr[$number[0]] . ")\s+(" . $arr[$number[1]] . ").*/iu", $userNumber)) {
-    echo "ok";
+if (preg_match("/.*(" . $arr[$number[0]] . ")\s+(" . $arr[$number[1]] . ").*/iu", $user)) {
+    echo "<b>Вы не робот. Можно продолжить регистрацию.</b>";
 } else {
-    echo "no";
+    echo "<b>Вы не человек. В доступе отказано!</b>";
 }
 ?>
 </body>
