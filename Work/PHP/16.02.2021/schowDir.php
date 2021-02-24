@@ -1,20 +1,26 @@
 <?php
 $dir = array_diff(scandir("files\\"), ['..', '.']);
-
 rsort($dir);
-
 foreach ($dir as $value) {
+    preg_match_all('/^.*\.(.*?)$/iu', $value, $matchs);
+    $ext = in_array($matchs[1][0], ['docx', 'jpg', 'rar', 'pdf', 'zip', 'png']) ? $matchs[1][0] : 'default';
+    echo "<a href='files\\$value'>$value</a>" . "<img src='Piktogram/$ext.png'><br>\n"; 
+}
 
-    $jpg = '/^.*\.(jpg|JPG)$/';
+
+
+
+//тоже работает!!!
+/*$jpg = '/^.*\.(jpg)$/i';
     $docx = '/^.*\.(docx|DOCX)$/';
     $pdf = '/^.*\.(pdf|PDF)$/';
     $rar = '/^.*\.(rar|RAR)$/';
     $png = '/^.*\.(png|PNG)$/';
     $ttf = '/^.*\.(ttf|TTF)$/';
     $txt = '/^.*\.(txt|TXT)$/';
-    $zip = '/^.*\.(zip|ZIP)$/';
+    $zip = '/^.*\.(zip|ZIP)$/';*/
 
-    if (preg_match($jpg, $value)) {
+    /*if (preg_match($jpg, $value)) {
         echo "<a href='files\\$value'>$value</a>" . "<img src='Piktogram/jpg.png'><br>";
     } elseif (preg_match($docx, $value)) {
         echo "<a href='files\\$value'>$value</a>" . "<img src='Piktogram/docx.png'><br>";
@@ -30,32 +36,7 @@ foreach ($dir as $value) {
         echo "<a href='files\\$value'>$value</a>" . "<img src='Piktogram/txt.png'><br>";
     } elseif (preg_match($zip, $value)) {
         echo "<a href='files\\$value'>$value</a>" . "<img src='Piktogram/zip.png'><br>";
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }*/
 
 
 
