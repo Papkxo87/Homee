@@ -27,22 +27,5 @@
   }
 
 
-  .bs-callout {
-    padding: 20px;
-    margin: 20px 0;
-    border: 3px solid #eee;
-    border-left-width: 5px;
-    border-radius: 3px;
-    }
-    .bs-callout-danger {
-    border-left-color: #d9534f;
-    }
-    
-    .bs-callout p {
-    margin-top: 0;
-    margin-bottom: 0;
-    }
-    .bs-callout-danger p {
-    color: #d9534f;
-    }
+  
     

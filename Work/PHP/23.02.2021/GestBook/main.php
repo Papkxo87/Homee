@@ -11,25 +11,34 @@
 </head>
 
 <body>
-<div class="header-h1">
-  <h1><b>Добро пожаловать в гостевую книгу</b></h1>
-</div>
+    <div class="header-h1">
+        <h1><b>Добро пожаловать в гостевую книгу</b></h1>
+    </div>
 
     <div class="container">
         <div class="row">
             <div class="col align-self-start">
                 <!--One of three columns-->
-                <div class="bs-callout bs-callout-danger">
-                    <?php
-                    include "functions.php";
+                <?php
+                echo "<table class='table' border=3>";
+                echo "<thead><tr><th scope='col'></th><th scope='col'>Время</th><th scope='col'>Имя</th><th scope='col'>Сообщение</th></tr></thead>";
+                echo "<tbody>";
+                echo "<tr class='table-active'>";
+                echo "<th scope='row'>1</th>";
+                
+                include "functions.php";
 
-                    foreach (loadMessages() as $row) {
-                        echo "<p>" . dateFormat($row["date_time"]) . "<br>" .//возможно здесь ошибка со временем
-                             $row["name"]. "<br></p>" .
-                             smile($row["msg"]). "<br>";
-                    }
-                    ?>
-                </div>
+                foreach (loadMessages() as $row) {
+                    echo "<p>" .'<td class="table-active">'. dateFormat($row["date_time"]).'</td>' . "<br>" . //возможно здесь ошибка со временем
+                    '<td>'.$row["name"].'</td>' . "<br></p>" .
+                        '<td>'.smile($row["msg"]).'</td>' . "<br>";
+                }
+                echo "</tr>";
+                echo "</tbody>";
+
+                echo "</table>";
+                ?>
+
             </div>
             <div class="col align-self-center">
                 <!--One of three columns-->
