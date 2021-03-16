@@ -160,3 +160,146 @@ FROM `vedomost`
 -- количество ЗАРПЛАТ
 SELECT COUNT(`zp`) AS 'количество ЗАРПЛАТ'
 FROM `vedomost`
+
+-- найти человека с самой большой зарплатой
+SELECT
+    `fio`
+FROM
+    `vedomost`
+WHERE
+    `zp` =(
+SELECT
+    MAX(`zp`)
+FROM
+    `vedomost`
+)
+
+-- найти человека с самой маленькой зарплатой
+SELECT
+    `fio`
+FROM
+    `vedomost`
+WHERE
+    `zp` =(
+SELECT
+    MIN(`zp`)
+FROM
+    `vedomost`
+)
+
+-- найти человека с зарплатой выше средней
+SELECT
+    `fio`
+FROM
+    `vedomost`
+WHERE
+    `zp` >(
+SELECT
+    AVG(`zp`)
+FROM
+    `vedomost`
+)
+
+-- найти количество человек в каждом отделе
+SELECT `otdel`, COUNT(*)
+FROM `vedomost`
+GROUP BY `otdel`
+
+-- найти количество человек в бухгалтерии
+SELECT `otdel`, COUNT(*)
+FROM `vedomost`
+WHERE `otdel`="бухгалтерия"
+GROUP BY `otdel`
+
+-- выводит отделы где 2 и более человек
+SELECT `otdel`, COUNT(*)
+FROM `vedomost`
+GROUP BY `otdel`
+HAVING COUNT(*)>=2
+
+-- выводит среднюю зарплатув каждом отделе
+SELECT
+    `otdel`,
+    AVG(`zp`)
+FROM
+    vedomost
+GROUP BY
+    `otdel`
+
+-- найти минимальную и максимальную зарплату в каждом отделе
+    SELECT 
+    `otdel`,
+    MAX(`zp`),MIN(`zp`)
+FROM
+    vedomost
+GROUP BY
+    `otdel`
+
+-- найти максимальную зарплату в отделах где работает больше одного человека
+SELECT `otdel`, MAX(`zp`)
+FROM vedomost
+GROUP BY `otdel` HAVING COUNT(*)>1
+
+-- сколько продавцов в каждом городе
+SELECT `CITY`, COUNT(*)
+FROM `salespeople`
+GROUP BY `CITY`
+
+-- сколько клиентов в каждом городе
+SELECT `CITY`, COUNT(*)
+FROM `customers`
+GROUP BY `CITY`
+
+-- покупатель с самым высоким рейтенгом
+SELECT `CNUM`,`CNAME`,`CITY`,`RATING`,`SNUM`
+FROM `customers`
+WHERE
+    `RATING` =(
+SELECT
+    MAX(`RATING`)
+FROM
+    `customers`
+)
+GROUP BY `CNAME`
+
+-- найти покупателя с именем оканчивающимся на "s"
+SELECT *
+FROM `customers`
+WHERE `CNAME` LIKE '%s'
+
+-- Найти продавца обслужившего самый большой заказ
+SELECT
+    SNAME
+FROM
+    salespeople
+WHERE
+    SNUM =(
+    SELECT
+        `SNUM`
+    FROM
+        orders
+    WHERE
+        `AMT` =(
+    SELECT
+        MAX(`AMT`)
+    FROM
+        orders
+    )
+)
+
+-- Найти все заказы клиента по имени Grass
+SELECT
+    *
+FROM
+    `orders`
+WHERE
+    CNUM =(
+    SELECT
+        CNUM
+    FROM
+        `customers`
+    WHERE
+        cname = "Grass"
+)
+
+
