@@ -302,4 +302,190 @@ WHERE
         cname = "Grass"
 )
 
+-- Вывести заказы всех клиентов из Рима и Берлина
+SELECT
+    *
+FROM
+    `orders`
+WHERE
+    CNUM IN( -- Поскольку подзапрос возвращает более одной записи в предложении WHERE необходимо использовать оператор IN
+    SELECT
+        CNUM
+    FROM
+        `customers`
+    WHERE
+        CITY = "Rome" or CITY ="Berlin"
+)
+
+
+-- обьеденяет таблицы и выводит Clemens
+SELECT
+    *
+FROM
+    `orders`,
+    `customers`
+    WHERE `orders`.`SNUM`=`customers`.`SNUM` AND `customers`.CNAME="Clemens"
+
+
+-- по продавцу и товару
+SELECT
+    `salespeople`.`SNAME`, SUM(`orders`.`AMT`)
+FROM
+    `orders`,
+    `salespeople`
+WHERE
+    `orders`.`SNUM` = `salespeople`.`SNUM`
+    GROUP BY `salespeople`.`SNAME`
+
+-- по 
+    SELECT
+    `customers`.`CNAME`,
+    SUM(`orders`.`AMT`)
+FROM
+    `orders`,
+    `customers`
+WHERE
+    `orders`.`CNUM` = `customers`.`CNUM`
+GROUP BY
+    `customers`.`CNAME`
+ORDER BY
+    `customers`.CNAME
+
+-- Найти среднюю сумму заказов клиентов из каждого города
+    SELECT
+    customers.CITY, AVG(orders.AMT)
+FROM
+    `orders`,
+    `customers`
+WHERE
+    orders.CNUM = customers.CNUM
+GROUP BY customers.CITY
+
+-- обьединение всех таблиц
+SELECT
+    *
+FROM
+    `orders`,
+    `salespeople`,
+    `customers`
+WHERE
+    `orders`.`SNUM` = `salespeople`.`SNUM` AND `customers`.`CNUM` = `orders`.`CNUM`
+
+-- Средний рейтинг покупателей для каждого продавца
+    SELECT
+    salespeople.SNAME,
+    AVG(customers.RATING)
+FROM
+    `orders`,
+    `customers`,
+    `salespeople`
+WHERE
+    orders.CNUM = customers.CNUM AND orders.SNUM = salespeople.SNUM
+GROUP BY
+    salespeople.SNAME
+
+-- Количество заказов у каждого продавца
+    SELECT
+    salespeople.SNAME,
+    COUNT(orders.AMT)
+FROM
+    `orders`,
+    `customers`,
+    `salespeople`
+WHERE
+    orders.CNUM = customers.CNUM AND orders.SNUM = salespeople.SNUM
+GROUP BY
+    salespeople.SNAME
+
+
+    -- Найти продавцов у которых сумма заказов больше или равна средней сумме заказов из Лондона
+    SELECT
+    SNAME,
+    SUM(AMT)
+FROM
+    `orders`,
+    `salespeople`
+WHERE
+    `orders`.`SNUM` = `salespeople`.`SNUM`
+GROUP BY
+    `salespeople`.`SNAME`
+HAVING
+    SUM(amt) >=(
+    SELECT
+        AVG(AMT)
+    FROM
+        `orders`,
+        `salespeople`
+    WHERE
+        `orders`.`SNUM` = `salespeople`.`SNUM` AND `CITY` = "London"
+    GROUP BY
+        `CITY`
+)
+
+
+-- Найти общую сумму заказов на каждую дату
+SELECT
+    `ODATE`,
+    SUM(AMT)
+FROM
+    `orders`
+GROUP BY
+    `ODATE`
+
+
+-- Найти доход каждого продавца
+SELECT
+    `salespeople`.`SNAME`,
+    SUM(AMT*`COMM`)
+FROM
+    `orders`,
+    `salespeople`
+WHERE
+    `orders`.`SNUM` = `salespeople`.`SNUM`
+GROUP BY
+    `salespeople`.`SNAME`
+
+
+-- Подсчитать количество клиентов у каждого продавца
+SELECT
+    `salespeople`.`SNAME`,
+    COUNT(`customers`.`CNUM`)
+FROM
+    `customers`,
+    `salespeople`
+WHERE
+    `customers`.`SNUM` = `salespeople`.`SNUM`
+GROUP BY
+    `salespeople`.`SNAME`
+
+-- Сколько дал на себе заработать каждый клиент?
+SELECT
+    `orders`.CNUM,
+    CNAME,
+    SUM(AMT * `COMM`) AS "SUMM"
+FROM
+    `orders`,
+    `salespeople`,
+    `customers`
+WHERE
+    orders.CNUM = customers.CNUM AND orders.SNUM = salespeople.SNUM
+GROUP BY
+    `orders`.`CNum`,
+    `CNAME`
+
+-- Вывести список продавцов обслуживших заказ у клиентов с самым высоким рейтингом
+SELECT DISTINCT
+    `salespeople`.SNAME
+FROM
+    `orders`,
+    `customers`,
+    `salespeople`
+WHERE
+    orders.CNUM = customers.CNUM AND orders.SNUM = salespeople.SNUM AND rating =(
+    SELECT
+        MAX(`RATING`)
+    FROM
+        `customers`
+)
+
 
