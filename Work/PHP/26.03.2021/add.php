@@ -1,9 +1,9 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "root", "Guest Book");
+$link = mysqli_connect("localhost", "root", "root", "guestbook");
 
 if(!empty($_POST)){
-$sql="INSERT INTO 'gb' ('message', 'name') VALUES ('$_POST[message]', '$_POST[name]')";
+$sql="INSERT INTO 'opros' ('id','name', 'meropriatie', 'comment', 'phone') ('$_POST[name]', '$_POST[meropriatie]','$_POST[comment]','$_POST[phone]')";
 mysqli_query($link,$sql);
 }
 
