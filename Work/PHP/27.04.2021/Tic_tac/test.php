@@ -1,6 +1,6 @@
 <?php
 
-include "autoload.php";
+/*include "autoload.php";
 include "unittest.php";
 
 $tic = new TicTac();
@@ -64,4 +64,28 @@ test(
         ["", "", "0"],
         ["", "", ""]
     ]
-);
+);*/
+
+
+
+include "autoload.php";
+include "unittest.php";
+
+$tic = new TicTac();
+
+$tic
+    ->init(3)
+    ->putCross(0, 1)
+    ->getMap();
+
+//print_r($tictac->init(2)->putCross(1,1)->getMap());
+
+//test($tictac->init(2)->getMap(),[["",""],["",""]]);
+//
+//test($tictac->init(1)->getMap(),[[""]]);
+
+$map = new Map();
+
+echo $map
+    ->setMap($tic->getMap())
+    ->getHtmlTable();

@@ -1,5 +1,5 @@
 <?php
-class Ol extends TList
+class Ol extends Lists
 {
     public function html(): string
     {

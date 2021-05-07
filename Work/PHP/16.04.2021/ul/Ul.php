@@ -1,7 +1,7 @@
 <?php
 
 
-class Ul extends TList
+class Ul extends Lists
 {
     public function html(): string
     {

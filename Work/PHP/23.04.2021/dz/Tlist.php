@@ -1,18 +1,21 @@
 <?php
 
 
-abstract class TList
+abstract class TList extends AbstractParent
 {
-    protected array $data;
-    protected $type;
+    protected string $type = "";
+    protected string $tagName = "";
 
-    public function setData(array $data)
+    public function __construct()
     {
-        $this->data = $data;
-        return $this;
+        $this->tagName = strtolower(get_class($this));
     }
 
-    public function setType(string $type)
+    /**
+     * @param string $type
+     * @return Lists
+     */
+    public function setType(string $type): static
     {
         $this->type = $type;
         return $this;
@@ -20,11 +23,8 @@ abstract class TList
 
     public function html(): string
     {
-        $html = "";
-        foreach ($this->data as $value) {
-            $html .= "\t<li>$value</li>\n";
-        }
+        $html = array_map(fn($item) => "\t<li>$item</li>\n", $this->data);
 
-        return $html;
+        return "<$this->tagName type='$this->type'>\n" . implode("", $html) . "</$this->tagName>";
     }
 }
