@@ -1,5 +1,7 @@
 <?php
-
-spl_autoload_register(function($className) {
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/Class/' . $className . '.php';
+spl_autoload_register(function ($class) {
+    $path = str_replace("\\", "/", "Class/$class.php");
+    if (file_exists($path)) {
+        include $path;
+    }
 });
